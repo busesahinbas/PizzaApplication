@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Buse_160201026.Pages.Page3"
+             IconImageSource="ICO3.png"
+             Title="Size"
+             xmlns:input="clr-namespace:Plugin.InputKit.Shared.Controls;assembly=Plugin.InputKit"
+             BackgroundColor="LightSteelBlue" 
+             >
+    
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="11*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <BoxView Grid.Row="0" Grid.Column="1" Color="White" />
+            <StackLayout Orientation="Vertical" Grid.Column="1" Grid.Row="0">
+                <input:RadioButtonGroupView>
+                    <Image x:Name="IMG2" Source="IMG2.jpg" HorizontalOptions="Center" />
+                    <Label Text="SIZE" TextColor="DarkRed" FontAttributes="Bold" FontSize="28" />
+                    <input:RadioButton x:Name="Radio1" Text="Small (1 Person)"  TextColor="Black"  TextFontSize="25"  />
+                    <input:RadioButton x:Name="Radio2" Text="Medium (2-3 People)" TextColor="Black"  TextFontSize="25" />
+                    <input:RadioButton x:Name="Raido3" Text="Large (3-4 People)" TextColor="Black"  TextFontSize="25" />
+                </input:RadioButtonGroupView>
+                <Button x:Name="But_Size_Add" Text="Add" Clicked="But_Size_Add_Clicked"/>
+
+                
+                
+            </StackLayout>
+        </Grid> 
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Buse_160201026.Pages.Page2"
+             IconImageSource="ICO2.png"
+             Title="Sign"
+             BackgroundColor="LightSteelBlue" 
+             >
+    
+    <ContentPage.Content>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="11*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <BoxView Color="White" Grid.Row="0" Grid.Column="1"/>
+
+            <StackLayout Orientation="Vertical" Grid.Column="1" Grid.Row="0">
+                
+                <Label Text="Name - Surname:" TextColor="Black" FontAttributes="Bold" />
+                <Entry x:Name="C_Name" />
+                <Label Text="Address:" TextColor="Black" FontAttributes="Bold" />
+                <Entry x:Name="C_Add" />
+                <Label Text="Phone:" TextColor="Black" FontAttributes="Bold" />
+                <Entry x:Name="C_Phone" />
+
+                <StackLayout Orientation="Horizontal" >
+                    <Button x:Name="But_Cus_Add" Text="Add" Clicked="But_Cus_Add_Clicked"/>
+                    <Button x:Name="Show_But" Text="Show" Clicked="Show_But_Clicked"/>
+                </StackLayout>
+
+                <ListView x:Name="Cus_List_View" ItemTapped="Cus_List_View_ItemTapped" >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell >
+                        <StackLayout Orientation="Horizontal" >
+                            <Label Text="{Binding CUS_ID}" TextColor="Black" />
+                            <Label Text="{Binding CUS_Name}" TextColor="Black" />
+                            <Label Text="{Binding CUS_Add}" TextColor="Black" />
+                            <Label Text="{Binding CUS_Phone}" TextColor="Black" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>    
+        </StackLayout>
+            
+        </Grid>
+     
+    </ContentPage.Content>
+</ContentPage>

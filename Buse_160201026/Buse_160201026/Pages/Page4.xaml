@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Buse_160201026.Pages.Page4"
+             IconImageSource="ICO4.png"
+             Title="Pizzas"
+             xmlns:input="clr-namespace:Plugin.InputKit.Shared.Controls;assembly=Plugin.InputKit"
+             BackgroundColor="LightSteelBlue" >
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="11*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <BoxView Grid.Row="0" Grid.Column="1" Color="White" />
+            <StackLayout Orientation="Vertical" Grid.Column="1" Grid.Row="0">              
+                <input:RadioButtonGroupView>
+                    <Label Text="PIZZAS" TextColor="DarkRed" FontAttributes="Bold" FontSize="28" />
+                    <input:RadioButton x:Name="Radio_1" Text="Margherita"  TextColor="Black"  TextFontSize="20"   />
+                    <input:RadioButton x:Name="Radio_2" Text="Hawaiian" TextColor="Black"  TextFontSize="20" />
+                    <input:RadioButton x:Name="Radio_3" Text="Extravaganzza" TextColor="Black"  TextFontSize="20" />
+                </input:RadioButtonGroupView>
+                <StackLayout Orientation="Horizontal" >
+                    <Button x:Name="But_Piz_Add" Text="Add" Clicked="But_Piz_Add_Clicked"/>
+                    <Button x:Name="Show_Piz_But" Text="Show" Clicked="Show_Piz_But_Clicked"/>
+                </StackLayout>
+
+                
+
+                <ListView x:Name="Piz_List_View">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell >
+                                <StackLayout Orientation="Horizontal" >
+                                    <Label Text="{Binding Pizza_ID}" TextColor="Black" />
+                                    <Label Text="{Binding Pizza_Size}" TextColor="Black" />
+                                    <Label Text="{Binding Pizza_Name}" TextColor="Black" />
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

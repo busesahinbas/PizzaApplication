@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Buse_160201026.Pages.Page5"
+             IconImageSource="ICO5.png"
+             Title="Enroll"            
+             >
+    <ContentPage.Content>
+        <StackLayout>
+            <Image x:Name="IMG3" Source="IMG3.jpg" HorizontalOptions="Center" />
+            <StackLayout Orientation="Vertical" >
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Customer Name:" TextColor="Black"></Label>
+                    <Label x:Name="C_name" ></Label>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Customer Address:" TextColor="Black"></Label>
+                    <Label x:Name="C_adres"></Label>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Customer Phone:" TextColor="Black" ></Label>
+                    <Label x:Name="C_phone"></Label>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Pizza Size:" TextColor="Black" ></Label>
+                    <Label x:Name="P_size"></Label>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Pizza Name:" TextColor="Black" ></Label>
+                    <Label x:Name="P_name"></Label>
+                </StackLayout>
+                <Button x:Name="Save_But" Text="Save" Clicked="Save_But_Clicked"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Listview" TextColor="DarkRed" FontAttributes="Bold" FontSize="25" />
+                <Button x:Name="Show_But" Text="Show" Clicked="Show_But_Clicked"/>
+            </StackLayout>
+
+            <ListView x:Name="Enroll_List_View">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell >
+                            <StackLayout Orientation="Horizontal" >
+                                <Label Text="{Binding CUS_ID}" />
+                                <Label Text="{Binding Pizza_ID}" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

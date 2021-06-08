@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Buse_160201026.Pages.Page1"
+             IconImageSource="ICO1.png"
+             Title="Home"
+             BackgroundColor="LightSteelBlue"    >
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="BUONA PIZZA" FontAttributes="Bold" TextColor="Red" FontSize="55" 
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <Image x:Name="IMG1" Source="IMG1.jpg" HorizontalOptions="Center" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
